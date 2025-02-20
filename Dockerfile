@@ -7,10 +7,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install dependencies and set UTF-8 locale
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        gnupg \
         ca-certificates \
         curl \
-        convmv \
         p7zip-full \
         unzip \
         locales && \
@@ -24,7 +22,7 @@ ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
 # Install AWS CLI
-RUN curl -sS "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+RUN curl -sS "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.22.35.zip" -o "awscliv2.zip" && \
     unzip awscliv2.zip && \
     ./aws/install && \
     rm -rf awscliv2.zip aws
@@ -38,7 +36,6 @@ RUN useradd -m -s /bin/bash paperless-backup
 
 # Verify installation
 RUN aws --version && \
-    gpg --version && \
     kubectl version --client
 
 # Switch to non-root user
