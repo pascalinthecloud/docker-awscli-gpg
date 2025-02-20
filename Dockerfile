@@ -6,6 +6,7 @@ RUN apt-get update && \
     apt-get install -y \
     gnupg \
     curl \
+    p7zip-full \
     unzip && \
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
     unzip awscliv2.zip && \
