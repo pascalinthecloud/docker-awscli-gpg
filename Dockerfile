@@ -11,6 +11,7 @@ RUN apt-get update && \
         curl \
         p7zip-full \
         unzip \
+        xxd \
         locales && \
     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
     locale-gen && \
