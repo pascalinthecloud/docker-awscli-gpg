@@ -12,6 +12,11 @@ RUN apt-get update && \
     ./aws/install && \
     rm -rf awscliv2.zip aws/
 
+# Create a non-root user and home directory
+RUN useradd -m -s /bin/bash paperless-backup
+
+RUN id -u backup
+
 # Verify installation
 RUN aws --version && \
     gpg --version
