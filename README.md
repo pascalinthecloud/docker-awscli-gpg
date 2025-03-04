@@ -1,2 +1,2 @@
 # docker-awscli-gpg
-A minimal Docker image for AWS CLI and GPG on Debian Slim.
+A minimal Docker image with awscli, kubectl, curl, unzip & xxd based on Debian Slim.
